@@ -2,7 +2,7 @@
 
 # Track Down App Purchases v0.1
 # Shell script to get a list of all iOS apps in your iTunes Library,
-# showing which Apple ID was used to purchase the app.
+# showing which Apple ID was used to purchase each app.
 #
 # Copyright © 2013 Jonathan Hogervorst. All rights reserved.
 # This code is licensed under MIT license. See LICENSE for details.

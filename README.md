@@ -1,7 +1,7 @@
 Track Down App Purchases v0.1
 =============================
 
-Shell script to list all iOS apps in your iTunes Library, showing which Apple ID was used to purchase the app.
+Shell script to list all iOS apps in your iTunes Library, showing which Apple ID was used to purchase each app.
 
 Installation
 ------------
