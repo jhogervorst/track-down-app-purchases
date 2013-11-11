@@ -43,10 +43,13 @@ function extract_key
 }
 
 printf "\n"
-read -p "Path to iTunes Library [~/Music/iTunes/]: " LIBRARY_PATH
-LIBRARY_PATH="${LIBRARY_PATH:-$HOME/Music/iTunes/}"
+LIBRARY_PATH_DEFAULT="~/Music/iTunes"
+read -p "Path to iTunes Library [$LIBRARY_PATH_DEFAULT]: " LIBRARY_PATH
+LIBRARY_PATH="${LIBRARY_PATH:-$LIBRARY_PATH_DEFAULT}"
+LIBRARY_PATH="${LIBRARY_PATH/\~/$HOME}"
+LIBRARY_PATH="${LIBRARY_PATH%/}"
 
-APP_FILES=$( find "${LIBRARY_PATH%/}/iTunes Media/Mobile Applications" -type f -name "*.ipa" )
+APP_FILES=$( find "$LIBRARY_PATH/iTunes Media/Mobile Applications" -type f -name "*.ipa" )
 INVALID_APP_FILES=""
 
 OIFS="$IFS"
