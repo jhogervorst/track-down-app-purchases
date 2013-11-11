@@ -12,9 +12,9 @@ Installation
 Usage & Example
 ---------------
 
-	$ ./track-down-app-purchases.sh 
+	$ ./track-down-app-purchases.sh
 	
-	Path to iTunes Library [~/Music/iTunes/]: 
+	Path to iTunes Library [~/Music/iTunes/]:
 	
 	------------------------------ | -------------- | ------------------------------
 	App Name                       | Bundle Name    | Apple ID                      
