@@ -42,7 +42,7 @@ function extract_key
 	echo "$METADATA" | sed -e "/<key>$KEY<\\/key>/I,/<string>/I!d" | sed -En "s/^.*<string>(.+)<\\/string>.*$/\\1/Ip"
 }
 
-printf "\n"
+echo ""
 LIBRARY_PATH_DEFAULT="~/Music/iTunes"
 read -p "Path to iTunes Library [$LIBRARY_PATH_DEFAULT]: " LIBRARY_PATH
 LIBRARY_PATH="${LIBRARY_PATH:-$LIBRARY_PATH_DEFAULT}"
@@ -55,7 +55,7 @@ INVALID_APP_FILES=""
 OIFS="$IFS"
 IFS=$'\n'
 
-printf "\n"
+echo ""
 DASHES="------------------------------"
 print_row "$DASHES" "$DASHES" "$DASHES"
 print_row "App Name" "Bundle Name" "Apple ID"
@@ -78,11 +78,13 @@ do
 done
 
 print_row "$DASHES" "$DASHES" "$DASHES"
-printf "\n"
+echo ""
 
 if [ ! -z "$INVALID_APP_FILES" ]
 then
-	printf "Some apps could not be processed:\n$INVALID_APP_FILES\n"
+	echo "Some files could not be processed:"
+	printf "$INVALID_APP_FILES"
+	echo ""
 fi
 
 IFS="$OIFS"
